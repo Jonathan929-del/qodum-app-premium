@@ -56,7 +56,7 @@ const register = ({navigation, route}) => {
             
 
             // Validations
-            if((!res.data.adm_no && res.data.password) || res.data.confirm_password){
+            if((!res?.data?.adm_no && res.data.password) || res.data.confirm_password){
                 setResErrors(res.data);
                 setIsLoading(false);
                 return;
@@ -66,10 +66,10 @@ const register = ({navigation, route}) => {
             // Subscribing to topic
             try {
                 if(type === 'student'){
-                    await messaging().subscribeToTopic(res.data?.student?.class_name);
-                    await messaging().subscribeToTopic(res.data?.adm_no?.replace(/\//g, '_'));
+                    await messaging().subscribeToTopic(res?.data?.student?.class_name);
+                    await messaging().subscribeToTopic(res?.data?.adm_no?.replace(/\//g, '_'));
                 }else{
-                    await messaging().subscribeToTopic(res.data?.adm_no?.replace(/\//g, '_'));
+                    await messaging().subscribeToTopic(res?.data?.adm_no?.replace(/\//g, '_'));
                 };
             }catch(err){
                 setSnackbarMessage('Error Registring!');

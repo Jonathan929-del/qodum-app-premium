@@ -52,11 +52,11 @@ const login = ({route, navigation}) => {
 
             // User login API call
             const link = type === 'student' ? `${configs.EXPO_PUBLIC_API_URL}/students/student/login` : `${configs.EXPO_PUBLIC_API_URL}/teachers/teacher/login`;
-            const res = await axios.post(link, {adm_no:data.adm_no, password:data.password});
+            const res = await axios.post(link, {adm_no:data?.adm_no, password:data.password});
             
 
             // Validations
-            if(res.data.adm_no === 'Wrong credentials.'){
+            if(res?.data?.adm_no === 'Wrong credentials.'){
                 setIsError(true);
                 setVisible(true);
                 setIsLoading(false);
@@ -67,10 +67,10 @@ const login = ({route, navigation}) => {
             // Subscribing to topic
             try {
                 if(type === 'student'){
-                    await messaging().subscribeToTopic(res.data.student.class_name);
-                    await messaging().subscribeToTopic(res.data.adm_no.replace(/\//g, '_'));
+                    await messaging().subscribeToTopic(res?.data?.student?.class_name);
+                    await messaging().subscribeToTopic(res?.data?.adm_no.replace(/\//g, '_'));
                 }else{
-                    await messaging().subscribeToTopic(res.data.adm_no.replace(/\//g, '_'));
+                    await messaging().subscribeToTopic(res?.data?.adm_no.replace(/\//g, '_'));
                 };
             }catch(err){
                 setSnackbarMessage('Error Registring!');
@@ -130,7 +130,7 @@ const login = ({route, navigation}) => {
                             name='adm_no'
                             rules={{required:true}}
                         />
-                        {errors.adm_no && <Text style={{color:'red'}}>Admission number is required.</Text>}
+                        {errors?.adm_no && <Text style={{color:'red'}}>Admission number is required.</Text>}
                     </View>
 
                     {/* Password */}

@@ -46,7 +46,7 @@ const register = ({route, navigation}) => {
         setIsLoading(true);
         try {
             const link = type === 'student' ? `${configs.EXPO_PUBLIC_API_URL}/students/student/send-otp` : `${configs.EXPO_PUBLIC_API_URL}/teachers/teacher/send-otp`;
-            const res = await axios.post(link, {adm_no:data.adm_no});
+            const res = await axios.post(link, {adm_no:data?.adm_no});
 
         
             // Validations
@@ -65,7 +65,7 @@ const register = ({route, navigation}) => {
                 setIsLoading(false);
                 return;
             };
-            if(res.data.adm_no === 'Teacher already registered'){
+            if(res?.data?.adm_no === 'Teacher already registered'){
                 setError('Teacher is already registered');
                 setIsLoading(false);
                 return;
@@ -87,8 +87,8 @@ const register = ({route, navigation}) => {
 
     // Use effect
     useEffect(() => {
-        errors.adm_no && setError('');
-    }, [errors.adm_no]);
+        errors?.adm_no && setError('');
+    }, [errors?.adm_no]);
 
 
     return (
@@ -128,8 +128,8 @@ const register = ({route, navigation}) => {
                             name='adm_no'
                             rules={{required:true}}
                         />
-                        {errors.adm_no && <Text style={{color:'red'}}>Admission number is required.</Text>}
-                        {!errors.adm_no && error && <Text style={{color:'red'}}>{error}</Text>}
+                        {errors?.adm_no && <Text style={{color:'red'}}>Admission number is required.</Text>}
+                        {!errors?.adm_no && error && <Text style={{color:'red'}}>{error}</Text>}
                     </View>
 
                     {isLoading ? (

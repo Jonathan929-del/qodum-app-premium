@@ -24,7 +24,6 @@ const localStorageCheck = async () => {
 
         // User token check
         const token = await AsyncStorage.getItem('token');
-        console.log(token);
         if(token){
             const decodedToken = JSON.parse(decode(token.split('.')[1]));
             if(decodedToken.exp > Date.now()){

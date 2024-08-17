@@ -76,11 +76,11 @@ const SchoolUpdates = ({navigation}) => {
                             </View>
                             <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingHorizontal:10}}>
                                 <Text style={{fontWeight:'600'}}>Class Notice</Text>
-                                {classNoticesCount !== 0 && (
+                                {/* {classNoticesCount !== 0 && (
                                     <View style={{width:16, height:16, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:30, backgroundColor:'red'}}>
                                         <Text style={{fontSize:12, color:'#fff'}}>{classNoticesCount}</Text>
                                     </View>
-                                )}
+                                )} */}
                             </View>
                             <View style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', paddingVertical:4, backgroundColor:'#DFEEF6', borderBottomLeftRadius:20, borderBottomRightRadius:20}}>
                                 <Text style={{fontSize:12, color:'#0094DA'}}>Details</Text>
@@ -105,11 +105,11 @@ const SchoolUpdates = ({navigation}) => {
                             </View>
                             <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingHorizontal:10}}>
                                 <Text style={{fontWeight:'600'}}>Events</Text>
-                                {noticesCount !== 0 && (
+                                {/* {noticesCount !== 0 && (
                                     <View style={{width:16, height:16, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:30, backgroundColor:'red'}}>
                                         <Text style={{fontSize:12, color:'#fff'}}>{noticesCount}</Text>
                                     </View>
-                                )}
+                                )} */}
                             </View>
                             <View style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', paddingVertical:4, backgroundColor:'#DFEEF6', borderBottomLeftRadius:20, borderBottomRightRadius:20}}>
                                 <Text style={{fontSize:12, color:'#0094DA'}}>Details</Text>
@@ -134,11 +134,11 @@ const SchoolUpdates = ({navigation}) => {
                             </View>
                             <View style={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent:'space-between', paddingHorizontal:10}}>
                                 <Text style={{fontWeight:'600'}}>Academic Survey</Text>
-                                {noticesCount !== 0 && (
+                                {/* {noticesCount !== 0 && (
                                     <View style={{width:16, height:16, display:'flex', alignItems:'center', justifyContent:'center', borderRadius:30, backgroundColor:'red'}}>
                                         <Text style={{fontSize:12, color:'#fff'}}>{noticesCount}</Text>
                                     </View>
-                                )}
+                                )} */}
                             </View>
                             <View style={{width:'100%', display:'flex', alignItems:'center', justifyContent:'center', paddingVertical:4, backgroundColor:'#DFEEF6', borderBottomLeftRadius:20, borderBottomRightRadius:20}}>
                                 <Text style={{fontSize:12, color:'#0094DA'}}>Details</Text>

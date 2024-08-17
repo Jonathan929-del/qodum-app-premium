@@ -66,7 +66,7 @@ export const NotificationProvider = ({children}) => {
     authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
     if (enabled) {
-      console.log('Authorization status: ', authStatus);
+      // console.log('Authorization status: ', authStatus);
     }
   };
 
@@ -79,22 +79,22 @@ export const NotificationProvider = ({children}) => {
 
       // Setting notifications count
       const notificationsLink = `${configs.EXPO_PUBLIC_API_URL}/notifications/notifications-count`;
-      const notificationsRes = await axios.post(notificationsLink, {topic:[user.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
+      const notificationsRes = await axios.post(notificationsLink, {topic:[user?.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
       setNotificationsCount(notificationsRes.data);
 
       // Class notices count
       const classNoticesLink = `${configs.EXPO_PUBLIC_API_URL}/notifications/class-notices-count`;
-      const classNoticesRes = await axios.post(classNoticesLink, {topic:[user.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
+      const classNoticesRes = await axios.post(classNoticesLink, {topic:[user?.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
       setClassNoticesCount(classNoticesRes.data);
 
       // Notices count
       const noticesLink = `${configs.EXPO_PUBLIC_API_URL}/notifications/notices-count`;
-      const noticesRes = await axios.post(noticesLink, {topic:[user.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
+      const noticesRes = await axios.post(noticesLink, {topic:[user?.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
       setNoticesCount(noticesRes.data);
 
       // Ediaries count
       const ediariesCountLink = `${configs.EXPO_PUBLIC_API_URL}/notifications/ediaries-count`;
-      const ediariesCountRes = await axios.post(ediariesCountLink, {topic:[user.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
+      const ediariesCountRes = await axios.post(ediariesCountLink, {topic:[user?.adm_no.replace(/\//g, '_'), user?.student?.class_name]});
       setEdiariesCount(ediariesCountRes.data);
 
     };
